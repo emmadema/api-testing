@@ -134,3 +134,8 @@ Make sure your tests still pass after you do any *refactoring*.
 1. This works great for one query on one API, but this would be **WAY** more useful if we could use this to test a query to any URL.  Make the request URL a variable so you can use this to test a bunch of functionality any time you tweak the URL.
 2. Two requests in less than two seconds?  This is a little crazy.  What mocha function can we use to run a request one time and save the response to test in multiple ways later on?  (This is challenging.  Be careful with scope, variable names, and the `done` function here.)
 3. A good idea to DRY out your code would be to use only one file to do all your requests and require it here in the test file and elsewhere in your app whenever needed.  Pull the requests into their own file and export them so we can use them anywhere.
+
+## References
+
+- Looking to test your API on the front end?  Have a look at [this article](https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/).
+  - **TLDR: You can use jQuery for an AJAX request and include mocha and chai the same way you include jQuery with a `<script>` tag.**
