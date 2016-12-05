@@ -16,11 +16,13 @@ Just like usual, you will need to create a new node project.  Don't forget to cr
 
 Then instructor runs this:
 
-1. mkdir
+1. mkdir omdb_mocha
+2. cd omdb_mocha
 2. npm init -y
 3. npm install --save-dev mocha chai
+4. npm install --save request
 4. mkdir test
-5. touch omdb_spec.js
+5. touch test/omdb_spec.js
 
 -->
 
