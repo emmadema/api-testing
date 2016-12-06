@@ -4,7 +4,7 @@ So now we have an idea of how to write tests for our Javascript code with Mocha 
 
 ## Choose your API
 
-For this lab, we will model these tests with the OMDB API, but you should choose an API that you think will be helpful for your Project.  The structure of the tests will look the same, but you will need to use a different URL and change some of the details to match your API.
+For this lab, we will model these tests with the OMDB API, once we're done, you should choose an API that you think will be helpful for your Project, and test that in a similar way.  The structure of the tests will look the same, but you will need to use a different URL and change some of the details to match your API.
 
 ## Setup
 
@@ -16,11 +16,13 @@ Just like usual, you will need to create a new node project.  Don't forget to cr
 
 Then instructor runs this:
 
-1. mkdir
+1. mkdir omdb_mocha
+2. cd omdb_mocha
 2. npm init -y
 3. npm install --save-dev mocha chai
+4. npm install --save request
 4. mkdir test
-5. touch omdb_spec.js
+5. touch test/omdb_spec.js
 
 -->
 
@@ -109,7 +111,7 @@ Ok, let's do this again.  We need to make sure there is something in our respons
 	});
 -->
 
-Woo hoo, we're failing again!  But why, if I `console.log(body)` it definitely looks like there's a title.  What's going wrong?
+Woo hoo, we're failing again!  But why?  If I `console.log(body)` it definitely looks like there's a title.  What's going wrong?
 
 > **Hint:** What data type is the response?
 
