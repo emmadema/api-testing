@@ -1,3 +1,5 @@
+<!--WDI started 9:46 ended 10:36 -->
+
 # Introduction
 
 So now we have an idea of how to write tests for our Javascript code with Mocha and Chai.  There is one more type of test that will be really useful for our next project: the asynchronous kind.  Specifically, today we will introduce a couple ways to test a 3rd Party Web API.
