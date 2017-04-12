@@ -4,7 +4,7 @@ So now we have an idea of how to write tests for our Javascript code with Mocha 
 
 ## Choose your API
 
-For this lab, we will model these tests with the OMDB API, once we're done, you should choose an API that you think will be helpful for your Project, and test that in a similar way.  The structure of the tests will look the same, but you will need to use a different URL and change some of the details to match your API.
+For this lab, we will model these tests with the OMDB API. Once we're done, you should choose an API that you think will be helpful for your Project, and test that in a similar way.  The structure of the tests will look the same, but you will need to use a different URL and change some of the details to match your API.
 
 ## Setup
 
@@ -140,4 +140,4 @@ Make sure your tests still pass after you do any *refactoring*.
 ## References
 
 - Looking to test your API on the front end?  Have a look at [this article](https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/).
-  - **TLDR: You can use jQuery for an AJAX request and include mocha and chai the same way you include jQuery with a `<script>` tag.**
+  - **TLDR: You can use jQuery for an AJAX request and include mocha and chai the same way you include jQuery, i.e. with a `<script>` tag.**
