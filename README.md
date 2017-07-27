@@ -1,4 +1,5 @@
 <!--WDI started 9:46 ended 10:36 -->
+<!--WDI4 started 9:51 -->
 
 # Introduction
 
@@ -13,6 +14,8 @@ For this lab, we will model these tests with the [ShakeItSpeare API](http://shak
 Just like usual, you will need to create a new node project.  Don't forget to create a folder called `test` and put a `<yourAPIname>_spec.js` file inside it.  See if you can remember how to do this with no directions.
 
 > **Hint:** you should use the `--save-dev` flag to install `mocha` and `chai` so they get saved into `package.json` dependencies (but only for your local machine).   You should use the `--save` flag to install `request` so it will get saved into `package.json` dependencies for all machines.
+
+<!--10:00 WDI4 when devs come back -->
 
 <!--
 
@@ -44,9 +47,11 @@ var request = require('request');
 
 describe("Shakes", function() {
 	it("should return 200 - OK");
-	it("should have a Title in the body");
+	it("should have a sentence in the body");
 });
 -->
+
+<!--10:10 WDI4 -->
 
 Now that we have our tests, let's try to make a request and fail our first test.  [This documentation](https://www.npmjs.com/package/request) has some good examples of making requests with the `request` npm package we used earlier.
 
@@ -65,6 +70,8 @@ describe("Shakes", function() {
 -->
 
 ...wait, that test passes?  What's going on here?  Well, remember that async Javascript problem?  Here it is again.  Our test runs in its entirety before we get the response back from our API.  When we get the response back, our assertion is too late, and our test sees *no errors*.  Thus, our test passes.
+
+<!--10:24 WDI4 -->
 
 But that's not TDD.  We need to fail our test first.  Please mocha, give us a way to see that beautiful red text again!  Lucky for us, there is such a thing.  It's called the `done` function.
 
@@ -130,6 +137,8 @@ Woo hoo, we're failing again!  But why?  If I `console.log(body)` it definitely 
 -->
 
 There, that's better.  Now we have two passing tests.  However, there are a number of ways we can improve these test.  From here, the sky is the limit.  Try the challenges below, then make these tests more refined for your API of choice.
+
+<!--10:54 WDI4, lots of struggling students -->
 
 ## Challenges
 
