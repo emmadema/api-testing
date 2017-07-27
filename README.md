@@ -6,7 +6,7 @@ So now we have an idea of how to write tests for our Javascript code with Mocha 
 
 ## Choose your API
 
-For this lab, we will model these tests with the OMDB API. Once we're done, you should choose an API that you think will be helpful for your Project, and test that in a similar way.  The structure of the tests will look the same, but you will need to use a different URL and change some of the details to match your API.
+For this lab, we will model these tests with the [ShakeItSpeare API](http://shakeitspeare.com/). Once we're done, you should choose an API that you think will be helpful for your Project, and test that in a similar way.  The structure of the tests will look the same, but you will need to use a different URL and change some of the details to match your API.
 
 ## Setup
 
@@ -18,13 +18,13 @@ Just like usual, you will need to create a new node project.  Don't forget to cr
 
 Then instructor runs this:
 
-1. mkdir omdb_mocha
-2. cd omdb_mocha
+1. mkdir shakes_mocha
+2. cd shakes_mocha
 2. npm init -y
 3. npm install --save-dev mocha chai
 4. npm install --save request
 4. mkdir test
-5. touch test/omdb_spec.js
+5. touch test/shakes_spec.js
 
 -->
 
@@ -42,7 +42,7 @@ Let's start by writing 2 pending tests that should be passing once we have a goo
 var expect = require('chai').expect;
 var request = require('request');
 
-describe("OMDB", function() {
+describe("Shakes", function() {
 	it("should return 200 - OK");
 	it("should have a Title in the body");
 });
@@ -53,9 +53,9 @@ Now that we have our tests, let's try to make a request and fail our first test.
 A good way to make a failing test is to assert that `true` equals `false`.  If we put this assertion inside our request, we should see some red...
 
 <!--
-describe("OMDB", function() {
+describe("Shakes", function() {
 	it("should return 200 - OK", function() {
-		request('http://www.omdbapi.com/?t=frozen', function (error, response, body) {
+		request('http://ShakeItSpeare.com/api/sentence', function (error, response, body) {
 		  expect(true).to.eq(false);
 		});
 	});
@@ -71,9 +71,9 @@ But that's not TDD.  We need to fail our test first.  Please mocha, give us a wa
 Let us refactor our test using a `done` callback, which will allow us to wait until we get our API result before we close our test.
 
 <!--
-describe("OMDB", function() {
+describe("Shakes", function() {
 	it("should return 200 - OK", function(done) {
-		request('http://www.omdbapi.com/?t=frozen', function (error, response, body) {
+		request('http://ShakeItSpeare.com/api/sentence', function (error, response, body) {
 		  expect(true).to.eq(false);
 		  done();
 		});
@@ -90,9 +90,9 @@ Yay, our tests are failing!
 But we're not actually testing our request.  Lucky for us, there was most of a `200 - OK` test bundled in [the documentation](https://www.npmjs.com/package/request) we were just reading.  There's something in the `response` object we can check against the 200 code.  What is it?
 
 <!--
-describe("OMDB", function() {
+describe("Shakes", function() {
 	it("should return 200 - OK", function(done) {
-		request('http://www.omdbapi.com/?t=frozen', function (error, response, body) {
+		request('http://ShakeItSpeare.com/api/sentence', function (error, response, body) {
 		  expect(response.statusCode).to.eq(200);
 		  done();
 		});
@@ -105,9 +105,9 @@ describe("OMDB", function() {
 Ok, let's do this again.  We need to make sure there is something in our response body.  How would we do that?
 
 <!--
-	it("should have a Title in the body", function(done) {
-		request('http://www.omdbapi.com/?t=frozen', function (error, response, body) {
-		  expect(body.Title).to.not.be.empty;
+	it("should have a sentence in the body", function(done) {
+		request('http://ShakeItSpeare.com/api/sentence', function (error, response, body) {
+		  expect(body.sentence).to.not.be.empty;
 		  done();
 		});
 	});
@@ -118,12 +118,12 @@ Woo hoo, we're failing again!  But why?  If I `console.log(body)` it definitely 
 > **Hint:** What data type is the response?
 
 <!--
-	it("should have a Title in the body", function(done) {
-		request('http://www.omdbapi.com/?t=frozen', function (error, response, body) {
+	it("should have a sentence in the body", function(done) {
+		request('http://ShakeItSpeare.com/api/sentence', function (error, response, body) {
 		  if (typeof(body) == "string") {
 		  	body = JSON.parse(body);
 		  }
-		  expect(body.Title).to.not.be.empty;
+		  expect(body.sentence).to.not.be.empty;
 		  done();
 		});
 	});
