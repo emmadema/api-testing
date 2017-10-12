@@ -1,0 +1,30 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "<!--WDI started 9:46 ended 10:36 --> <!--WDI4 started 9:51 -->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmadema/api-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmadema/api-testing/issues"
+  },
+  "homepage": "https://github.com/emmadema/api-testing#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.2",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "body": "^5.1.0",
+    "parser": "^0.1.4",
+    "request": "^2.83.0"
+  }
+}
